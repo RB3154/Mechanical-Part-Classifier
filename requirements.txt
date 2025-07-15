@@ -1,4 +1,4 @@
 streamlit==1.35.0
-torch==2.7.1            # CPU wheel (< 100 MB); Cloud has no GPU anyway
+torch==2.3.0            # CPU wheel (< 100 MB); Cloud has no GPU anyway
 torchvision==0.18.0
 pillow==10.4.0
