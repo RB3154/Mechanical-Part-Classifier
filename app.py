@@ -5,6 +5,13 @@ from torchvision import models, transforms
 import torch.nn as nn
 import io
 
+# ─── Streamlit page config (must be first Streamlit call) ────────────────────
+st.set_page_config(
+    page_title="Parts Classifier",
+    page_icon="🔩",
+    layout="wide"
+)
+
 # ─── Settings ────────────────────────────────────────────────────────────────
 MODEL_PATH = "mobilenetv3_best.pth"
 IMG_SIZE   = (224, 224)
@@ -22,10 +29,6 @@ def load_model():
 model, CLASS_NAMES = load_model()
 
 # ─── UI ───────────────────────────────────────────────────────────────────────
-st.set_page_config(page_title="Parts Classifier",
-                   page_icon="🔩",
-                   layout="wide")
-
 st.title("🔩🆚🔧 Mechanical Parts Image Classifier")
 st.markdown(
     "Upload a pic of a **bolt, nut, washer, or locating pin** and I'll guess what it is."
@@ -52,5 +55,7 @@ if uploaded_file:
     pred_idx = logits.argmax(1).item()
     prob     = torch.softmax(logits, dim=1)[0, pred_idx].item() * 100
 
-    st.success(f"### 🧠 Prediction: **{CLASS_NAMES[pred_idx]}**\n"
-               f"Confidence: **{prob:.2f}%**")
+    st.success(
+        f"### 🧠 Prediction: **{CLASS_NAMES[pred_idx]}**\n"
+        f"Confidence: **{prob:.2f}%**"
+    )
