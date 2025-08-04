@@ -1,8 +1,8 @@
 # 🛠️ Mechanical Part Classifier
-A deep learning-based image classification system built with PyTorch and MobileNetV3, designed to identify mechanical parts from images. This project is tailored for industrial applications such as quality inspection, inventory sorting, and automated manufacturing processes.
+A deep learning-based image classification system built with PyTorch and MobileNetV3, designed to identify mechanical parts from images.
 
 # 🚀 Features
-- ✅ Classifies mechanical parts using MobileNetV3
+- ✅ Classifies nut/bolt/locatingpin/washer using MobileNetV3
 - ✅ Simple Streamlit app for real-time predictions
 - ✅ Pre-trained model included
 - ✅ Dataset organized by Roboflow (YOLO format)
